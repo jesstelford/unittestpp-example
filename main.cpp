@@ -92,15 +92,3 @@ TEST (UpdateWithForceWillMovePosition)
     CHECK_EQUAL (startPos.x, newPos.x);
     CHECK_EQUAL (startPos.y + force.y, newPos.y);
 }
-
-TEST (ApplicationHas2DRendererWhenSet)
-{
-    Application* myApp = new Application(RENDERER_2D | INPUT);
-    CHECK (myApp->isModuleEnabled(RENDERER_2D));
-}
-
-TEST (ApplicationDoesntHave2DRenderWhenNotSet)
-{
-    Application* myApp = new Application(INPUT);
-    CHECK_EQUAL (false, myApp->isModuleEnabled(RENDERER_2D) );
-}
